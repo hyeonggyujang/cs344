@@ -1,0 +1,41 @@
+2.1
+    Which of the local search algorithms solves the problem? How well does each algorithm do?
+Both algorithms successfully found the solution.
+    Which algorithm works more quickly?
+Hill-climbing.
+    Does the starting value for x make any difference? Why or why not?
+No, there is only one maximum each in both functions.
+    What affect does changing the delta step value make on each algorithm? Why?
+Sometimes change the solution; it's because depending on the initial value, the true maximum can't be reached with the given delta.
+    What is the purpose of the exp_schedule() method in the simulated annealing function call?
+The purpose of this function is to set the time limit in searching the next step.
+
+2.2
+
+    How do each of the algorithms do on this problem space? Why?
+Neigther seems to find the optimal solution consistently; hill-climbing obviously struggles by its nature of algorithm, simulated annealing should find the right answer given higher limit in scheduling function.
+    Does the starting value make any difference here?
+Yes; depending on the starting value, the result value varies.
+    Does modifying the step size (i.e., delta) affect the operation of the two algorithms? Why or why not?
+Yes; depending on the step size, as the local maximum varies, hence the result would also vary.
+    What are the maximum and minimum possible values here, and how do the two algorithms score with respect to them?
+There is no maximum value, but the minimum possible value is 0; the two algoritms are finding the local maxima.
+
+2.3
+
+    How does each algorithm do with these restarts? Why?
+Reset the initial value, because if you don't, then each loop would use an initial of constant value.
+    What are the average values of the runs for each of the algorithms?
+For hill-climbing, the average is around 6, and for simulated annealing, the average is around 15.
+    If one of the algorithms does better, explain why; if not, explain why not.
+Hill-climbing is working much better in terms of time consumption; it's because we know that the true answer is around the x value of 30, and we are providing random initial value between 0 and 30.
+
+2.4
+
+    For which algorithm does beam search make the most sense?
+It makes the most sense to use beam search for the simulated annealing, because the simulated annealing is the one that considers the value change beyond the imminate value change.
+    How many solutions could you maintain with reasonable space and time constraints?
+Since simulated annealing uses 1000 search as its limit, I would just go with 1000 as the limit for beam search, too.
+    How would you modify the code to implement beam search? How is it different from random restarts, if at all? 
+I would have to create a search tree, or a search graph to assign heuristic to each possible complete state, then look for the optimal state; it would be different from the random restarts, as the beam search would need only one start; the search algorithm will consider all possible complete state (then it'll become a breath-frist search, if using heuristics, then it's a beam search) and choose the optimum answer.
+
