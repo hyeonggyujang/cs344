@@ -1,0 +1,42 @@
+3.1
+
+a. 
+The format is puzzle: worked algorithms. 
+solved: depth-first search, AC3, backtracking search, min conflicts.
+easy: AC3, backtracking search
+harder: 
+hardest: 
+Clearly, all the algorithms would not work very well with sudoku. 
+For DFS, it's very inefficient of finding answer by traversing all the way to the end of the solution graph, when there could be an extensive network of nodes. 
+For AC-3 algorithm, only easy sudoku is solvable because AC-3 only checks constraints between two nodes. If more slots in the sudoku grid were empty, then there will be too many pairs of conflicts that affect other pairs of conflicts, so the AC-3 algorithm would not work in harder sudokus.
+For backtracking, it's doing similar thing as it was in AC-3. It eliminates unlikely nodes which are assigned by checking constraints. In this case, too, there are too many nodes to be checked, so without implementing heuristic assignment, backtracking would not be able to find the solution efficiently.
+For minimum conlicts algorithm, it also seems not working well with this problem. The conflict constraints are too extensive in terms of the number of possible conflicts for each variable, where the variable represent only one slot.
+
+b.
+Minimum-remaining-values alone doesn't change the result, but inference parameter with forward checking worked. These two, in combination just work as well as the setting with the inference parameter set as forward_checking.
+
+
+3.2
+
+a.
+AC fails in all values of n. Again, the contraints state is checked in between two variables independent from other variables, and the conflicted states that will hault the program with failure.
+Backtracking can get upto n of 25. Prunning of conflicted states seem to work well up to fairly small size of 25 with the method of backtracking. However, minimum conflicts algorithm seems to be working the best as it intentionally chooses the path within nodes that have least amount of conflicts.
+Min_conflicts can get upto n of at least 4096.
+
+b.
+Backtrack with forward checking only would increase the performance, but not by much.
+Backtrack with mrv would increase the performance greatly, handling upto n = 99 in 37 seconds. When these two parameters are used simultaneously, the time taken decreases significantly, outputting 0.061 seconds. These two parameters each facilitates prunning, which is an advantageous process when there are extensive amount of possible nodes to evalute. 
+
+c. Depending the size of the variables, the steps required to solve the problem would vary, but the min-conflicts would interate the following steps:
+(1) Check current state, if it's the solution, return current state;
+(2) Randomly choose a variable
+(3) Transistion the state where the variable's conflict is minimized
+
+
+3.3
+
+a.
+In comparing CSP and the traditional problems(TP), I could see there are some differneces between them. First, the formulation of the problem is not the same. In TPs, there are initial state, actions, transitional states, goal testings, and cost function. Slightly different, the CSPs would formulate with varibles, domains, neighbors, and constraints. Exploring more specifically on the states, the TPs would have a track of solving steps, as each of their steps are progressive towards the desired solution. In CSPs, each node of state is a complete-state, which is a possible (whether conflicting or not) solution for the problem. In TPs, actions could be defined by the programmer, whereas in CSPs, each transition is just a transition from one complete-state to another complete-state. The results would look similar as both problems would show a non-conflicting complete-state. The goal tests are the same in both problems, just checking whether the current state is complete and non-flicting. 
+
+b.
+The nature of heuristics in TS and CSP is similar but implemented differently. The heuristics can be implemented in TS by using cost function, directing the program to prun out cost-inefficient results out of the possible future actions. In CSP, one can implement some additional algorithms to evaluate heuristics of each leaf of the tree of nodes, and dynamically reassign the heuristics for each transisition.
