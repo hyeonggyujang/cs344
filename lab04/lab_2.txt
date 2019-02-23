@@ -1,0 +1,32 @@
+
+Exercise 4.3
+a.
+i. <P(user), P(-user)> = <0.089, 0.911>
+ii. P(test|user) = 0.99 (given in the question)
+iii. P(-test|user) = 1 - P(test|user) = 0.01
+iv. P(test|-user) = 1 - P(-test|-user) = 0.02
+v. <P(user|test), P(-user|test)>;
+
+    P(user|test) = P(user^test) / P(test)
+                 = P(user) * P(test|user) / P(test)
+                 = 0.089 * 0.99 / 1.01
+                 = 0.0872
+    P(-user|test) = P(-user^test) / P(test)
+                 = P(-user) * P(test|-user) / P(test)
+                 = 0.911 * 0.02 / 1.01
+                 = 0.0180
+    Probability distribution of <P(user|test), P(-user|test)>:
+    <0.0872 / (0.0872 + 0.0180), 0.0180 / (0.0872 + 0.0180)>
+    = <0.829, 0.171>
+
+b.
+<P(cancer|mammography), P(-cancer|mammography)>
+P(cancer|mammography) = P(cancer) * P(mammography|cancer) / P(mammography)
+                      = 0.01 * 0.80 / 0.896
+                      = 0.00893
+P(-cancer|mammography) = P(-cancer) * P(mammography|-cancer) / P(mammography)
+                       = 0.99 * 0.096 / 0.896
+                       = 0.10607
+Probability distribution of <P(cancer|mammography), P(-cancer|mammography)>:
+<0.00893 / (0.00893+0.10607), 0.10607 / (0.00893+0.10607)>
+= <0.0777, 0.9223>
