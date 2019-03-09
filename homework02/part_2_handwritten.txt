@@ -1,0 +1,14 @@
+i. P(Cloudy) = <0.5, 0.5>
+ii. P(Sprinkler|cloudy) = <0.1, 0.9>
+iii. P(Cloudy|sprinkler^-rain) = alpha * <0.1*0.2*0.5, 0.5*0.8*0.5>
+                               = alpha * <0.01, 0.2>
+                               = <0.0476, 0.9524>
+iv. P(WetGrass|cloudy^sprinkler^rain) = alpha * <0.99*0.1*0.8*0.5, 0.01*0.1*0.8*0.5>
+                                      = <0.99, 0.01>
+v. P(Cloudy|-wetgrass) = alpha * sum( P(Cloudy^sprinkler^rain^-wetgrass) )
+                       = alpha * sum( P(Cloudy) * P(sprinkler^rain^-wetgrass|Cloudy) )
+                       = alpha * <0.5 * (0.1*0.8*0.01 + 0.1*0.2*0.1 + 0.9*0.8*0.1 + 0.9*0.2*1),
+                                  0.5 * (0.5*0.2*0.01 + 0.5*0.8*0.1 + 0.5*0.2*0.1 + 0.5*0.8*1)>
+                       = alpha * <0.5*0.2548, 0.5*0.451>
+                       = alpha * <0.1274, 0.2255>
+                       = <0.361, 0.639>
