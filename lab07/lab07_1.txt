@@ -1,0 +1,11 @@
+a.
+Exercise 1:
+cities['San and pop>50'] = (cities['City name'].apply(lambda val: 'San' in val) & cities['Area square miles'].apply(lambda val: val > 50))
+cities
+Exercise 2:
+cities.reindex([1, 0, 2, 3])
+Using the indices outside of the scope is allowed for reindex function as this function fills in NaN's for the missing rows.
+b.
+The data frame feature of Pandas is advantageous for using Pandas since Pandas would allow including column names, including different data types in a data frame, and allowing R-style codes.
+c.
+Shuffling is important that the split input dataset into the ML training should avoid any bias or patterns.

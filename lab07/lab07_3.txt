@@ -1,0 +1,29 @@
+a.
+task1:
+california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"]
+
+calibration_data = train_model(
+    learning_rate=0.00005,
+    steps=500,
+    batch_size=5,
+    input_feature="rooms_per_person"
+)
+task2:
+plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+plt.ylabel("targets")
+plt.xlabel("predictions")
+Some predictions values are way too high to be fit in the trend created by rest of the data points.
+task3:
+california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["rooms_per_person"].apply(lambda x: min(x, 4))
+calibration_data = train_model(
+    learning_rate=0.01,
+    steps=500,
+    batch_size=32,
+    input_feature="rooms_per_person"
+)
+plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+b.
+The purpose of introducing synthetic features is to include some adjustments for the input feature.
+c.
+The outliers are the the predictions that carry abnormal values compared to the trend set by the rest of the other values.
+We typically get rid of them for the better prediction values.

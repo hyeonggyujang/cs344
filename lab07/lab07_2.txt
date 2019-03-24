@@ -1,0 +1,25 @@
+a.
+Categorical data is character type. Even though it could have numbers as categorical data, those numbers would be strings.
+Numerical data is numbers.
+b.
+task1:
+train_model(
+    learning_rate=0.00002,
+    steps=500,
+    batch_size=10
+)
+hyperparameters: learning rate = 0.00002, steps = 500, batch_size = 10
+RMSE: 168.18
+task2:
+train_model(
+    learning_rate=0.00002,
+    steps=1000,
+    batch_size=10,
+    input_feature="population"
+)
+hyperparameters: learning rate = 0.00002, steps = 1000, batch_size = 10
+RMSE: 176.05
+c.
+The hyperparameters are the parameters set before the training begins.
+Depending on the values of the hyperparameters, the efficiency and the accuracy of the model prediction would vary.
+There isn't a "standard" tuning algorithm for them, but depending on the type of the inadequacy of the model, different hyperparameters could be changed.
