@@ -1,0 +1,6 @@
+In class, we calculated the gain of Type? was 0.0, and the gain of Patrons? was 0.54.
+Gain(Hungry?) = Entropy(v) - Remainder(Hungry?)
+	      = Entropy(v) - (7/12*Entropy(Hungry?) + 5/12*Entropy(-Hungry?))
+	      = Entropy(v) - (7/12*(-5/7*log_2(5/7) - 2/7*log_2(2/7)) + 5/12*(-1/5*log_2(1/5) - 4/5*log_2(4/5))
+	      = 1 - 0.80429 = 0.19571
+As Gain(Patrons?) > Gain(Hungry?), we prefer Patrons? over Hungry? as our attribute.

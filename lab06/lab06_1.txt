@@ -1,0 +1,14 @@
+1. I'd like the machine learned model to identify whether an email in Gmail is "important."
+2. The outcome produced would be a model that would utilizes a set of numbers or identifications to identify the input information with its attributes.
+3. Our success metric is all input emails are correctly labeled in at least 95% of all trials. 
+   Our model is deemed to fail if it sorts an email as an incorrect label more than 10% of the trials or if it doesn't sort an email at all.
+4. The output from our model will be a label of an input email as either "important" or "unimportant."
+   The definition of the output would be how frequent the user's reply to the given type of emails.
+5. The output from our model will be available immediately after receiving emails.
+   The output will be used for categorizing the emails and visually dividing the distinction between "important" and "unimportant" emails.
+6. If we don't use the ML model, we would use the heuritics like, reply frequency, having less special characters, etc.
+7a. binary classification
+7b. The model would classify into binary categories of important and unimportant.
+8. Inputs: sender name, content corpus.
+9. Each incident would be each unique sender. It would not take much work, as we can just process the sender name and email corpus then add each incident for each unique sender.
+10. Both of the inputs are easily accessable. 
