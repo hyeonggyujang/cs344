@@ -1,0 +1,45 @@
+a. 
+The Pearson correlation coefficient (PCC) measures the linear correlation (only) between two variables. total_rooms and total_bedrooms carries high PCC value, because we know that the number of total rooms and the number of total bedrooms are dependent to each other. 
+b.
+task1:
+minimal_features = [
+    'housing_median_age',
+    'rooms_per_person'
+]
+
+assert minimal_features, "You must select at least one feature!"
+
+minimal_training_examples = training_examples[minimal_features]
+minimal_validation_examples = validation_examples[minimal_features]
+
+train_model(
+    learning_rate=0.01,
+    steps=500,
+    batch_size=5,
+    training_examples=minimal_training_examples,
+    training_targets=training_targets,
+    validation_examples=minimal_validation_examples,
+    validation_targets=validation_targets)
+RMSE from these features: 133.79
+
+task2:
+def alter_features(df):
+  lat_ranges = zip(range(32, 44), range(33, 45))
+  output = pd.DataFrame()
+  output['median_income'] = df['median_income']
+  for lat_range in lat_ranges:
+    output['lattitude_%d_to_%d' % lat_range] = df['latitude'].apply(lambda l: 1 if l >= lat_range[0] and l < lat_range[1] else 0)
+  return output
+
+filtered_training_examples = alter_features(training_examples)
+filtered_validation_examples = alter_features(validation_examples)
+
+train_model(
+learning_rate=0.05,
+steps=500,
+batch_size=5,
+training_examples=filtered_training_examples,
+training_targets=training_targets,
+validation_examples=filtered_validation_examples,
+validation_targets=validation_targets)
+RMSE: 83.32

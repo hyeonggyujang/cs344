@@ -1,0 +1,16 @@
+a.
+Both Seaborn and MatPlotLib are used to create visualizations on Python.
+Seaborn: It is based on MatPlotLib, where there are more features available in creating a plot, but less felxible in function.
+MatPlotLib: It is the parent library of Seaborn, where it is more flexible in customizng the features of plots.
+
+b.
+The dataset is not too big, having 397 observations, but the dataset size is appropriate in this case.
+
+c.
+The prescribed noramalization helps features normalize values in each feature so that it would be easier to train, and it makes the resulting model independent on the choice of units used in the input.
+
+d.
+This is a linear regression model.
+
+e.
+Small network is generally preferred with smaller dataset, to avoid the risk of overfitting. If the dataset is large and the network is too small, then there is the risk of underfitting. Therefore, the size of the network should be proportionally changed according tothe size of the dataset used.
