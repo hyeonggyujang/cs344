@@ -1,0 +1,16 @@
+a. b.
+We are regularizing with respect to sparsity because we are maximizing the statistical robustness and the performance by minimizing the number of features in estimating. 
+
+c.
+l = 0.25
+model size = 780
+linear_classifier = train_linear_classifier_model(
+    learning_rate=0.1,
+    regularization_strength=0.0,
+    steps=300,
+    batch_size=100,
+    feature_columns=construct_feature_columns(),
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)

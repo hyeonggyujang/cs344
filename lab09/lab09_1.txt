@@ -1,0 +1,24 @@
+a.
+The final output of the linear regression is either 0 or 1, indicating whether the house is a high-cost city block. The model, before the final output, generates a number between 0 and 1 as the prediction, and be rounded up either to 0 or 1. The round-up-threshold is 0.5.
+
+b.
+By taking the logarithm of the loss, we can also make the losses more manageable since all the prediction values would close to 0. If use L2 loss, then the loss values are going to be even smaller, since L2 takes the squared value of the losses. 
+
+c.
+A logistic regression would find the probability of correctly classifying a binary category, but a linear regression would predict a meteric value. 
+
+d.
+# TUNE THE SETTINGS BELOW TO IMPROVE AUC
+linear_classifier = train_linear_classifier_model(
+    learning_rate=0.0000001,
+    steps=50000,
+    batch_size=30,
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)
+
+evaluation_metrics = linear_classifier.evaluate(input_fn=predict_validation_input_fn)
+
+print("AUC on the validation set: %0.2f" % evaluation_metrics['auc'])
+print("Accuracy on the validation set: %0.2f" % evaluation_metrics['accuracy'])

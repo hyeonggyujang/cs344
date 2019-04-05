@@ -1,0 +1,25 @@
+a.
+i.
+The input training size is 2000, but the original size is 25000.
+total training cat images: 1000
+total training dog images: 1000
+total validation cat images: 500
+total validation dog images: 500
+ii.
+The convnet in this execise has more convolutional layers than what we did in the class. 
+iii.
+The intermediate images resemble the shape of cats.
+
+b.
+i.
+data augmentation: "artificially boosting the diversity and number of training examples by performing random transformations to existing images to create a set of new variants."
+ii. 
+loss: 4760
+
+_ = model.fit_generator(
+      train_generator,
+      steps_per_epoch=100,
+      epochs=30,
+      validation_data=validation_generator,
+      validation_steps=50,
+      verbose=2)
