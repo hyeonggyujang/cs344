@@ -1,0 +1,18 @@
+a.
+ Depending on the purpose, I could use either Keras or TensorFlow for different purpose. If I am satisfied with a lot of defaults assumed by the library, then I would use Keras, but if I want to control subtle details in building NN then I would use TensorFlow.
+b. 
+dnn_regressor = train_nn_regression_model(
+    learning_rate=0.01,
+    steps=5000,
+    batch_size=100,
+    hidden_units=[10, 2],
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)
+
+    Final RMSE (on training data):   104.74
+	Final RMSE (on validation data): 104.98
+	(no overfitting observed)
+
+	

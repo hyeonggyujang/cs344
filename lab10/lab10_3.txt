@@ -1,0 +1,18 @@
+a. The confusion matrix would show the predicted categories on one dimension and the actual categories of input on the other dimension. It would show which digits are classified correctly and which are classified incorrectly.
+
+b. First, the TensorFlow version is much more complex, consisted of a lot more lines of codes. Second, the input image doesn't seem to be divided in the same way we divided one in the class. Here, the input image is divided into small area of pixels without stride. The following hyperparameters had improved the model accuracy by 0.01, but I suspect there is some overfitting going on:
+classifier = train_nn_classification_model(
+    learning_rate=0.05,
+    steps=1000,
+    batch_size=60,
+    hidden_units=[100, 100],
+    training_examples=training_examples,
+    training_targets=training_targets,
+    validation_examples=validation_examples,
+    validation_targets=validation_targets)
+
+    Final Accuracy: 0.96
+
+Accuracy on the test data is 0.95.
+
+c. As the number of steps increases, the generated images more resemble some definitive shapes of something. 
