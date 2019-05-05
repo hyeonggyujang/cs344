@@ -1,0 +1,51 @@
+Given:
+  isOn(a, b)
+  isOn(b, c)
+  supports(table, c)
+  supports(x, y) => isOn(y, x)
+  isOn(y, x) => isAbove(y, x)
+  (isAbove(y, x) ^ isAbove(x, z)) => isAbove(y, z)
+
+Prove: 
+  isAbove(a, table)
+
+
+Proof:
+
+  Conclusion 1: 
+    given supports(table, c),
+    from supports(x, y) => isOn(y, x),
+    by setting x as table, and y as c,
+    we get isOn(c, table).
+
+  Conclusion 2:
+    given isOn(a, b),
+    from isOn(y, x) => isAbove(y, x),
+    by setting y as a and x as b,
+    we get isAbove(a, b).
+
+  Conclusion 3:
+    given isOn(b, c),
+    from isOn(y, x) => isAbove(y, x),
+    by setting y as b, and x as c,
+    we get isAbove(b, c).
+
+  Conclusion 4:
+    given isOn(c, table),   # conclusion 1
+    from isOn(y, x) => isAbove(y, x),
+    by setting y as c, and x as table,
+    we get isAbove(c, table).
+
+  Conclusion 5:
+    given isAbove(b, c) and isAbove(c, table),   # conclusion 3 and 4
+    from (isAbove(y, x) ^ isAbove(x, z)) => isAbove(y, z),
+    by setting y as b, x as c, and z as table,
+    we get isAbove(b, table).
+
+  Conclusion 6:
+    given isAbove(a, b) and isAbove(b, table),   # conclusion 2 and 5
+    from (isAbove(y, x) ^ isAbove(x, z)) => isAbove(y, z),
+    by setting y as a, x as b, and z as table,
+    we get isAbove(a, table).
+
+  Proof ends.
