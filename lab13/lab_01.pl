@@ -9,3 +9,31 @@ in(X, Y) :- directlyIn(X, Z),
             in(Z, Y).
 
 #   ii.
+tran(eins,one). 
+tran(zwei,two). 
+tran(drei,three). 
+tran(vier,four). 
+tran(fuenf,five). 
+tran(sechs,six). 
+tran(sieben,seven). 
+tran(acht,eight). 
+tran(neun,nine).
+
+trantran ([], []).
+
+trantran([X|Y], [A|B]) :-
+            tran(X, A),
+            trantran(Y, B).
+
+
+# b. Prolog can implement a generalized version of Modus Ponens.
+#           For example,
+
+mortal(X) :- human(X).
+human(socrates).
+
+# such that,
+
+?- mortal(socrates)
+
+#returns true.
