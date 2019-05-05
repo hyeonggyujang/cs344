@@ -21,9 +21,9 @@ tran(neun,nine).
 
 trantran ([], []).
 
-trantran([X|Y], [A|B]) :-
-            tran(X, A),
-            trantran(Y, B).
+trantran([X|Y], [G|E]) :-
+            tran(X, G),
+            trantran(Y, E).
 
 
 # b. Prolog can implement a generalized version of Modus Ponens.
