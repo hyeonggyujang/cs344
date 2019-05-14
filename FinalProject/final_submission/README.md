@@ -10,9 +10,11 @@ Description:
   The purpose of Gen is to create counterfeit images that look "real" enough to trick Dis.
   The purpose of Dis is to create a NN that could distinguish the real data from the counterfeit data.
   By creating the adversarial network, each of Gen and Dis would compete with each other, improving their performance.
+  
   In this project, two versions of GAN are implemented, one provided by Chollet and the other provided by Atienza.
+  The GANs used in this project is called Deep Convolutional GAN (DCGAN) which utilizes deep convolutional layers implemented from Keras library.
+  
   To access each source, please visit following links:
     Chollet: https://github.com/fchollet/deep-learning-with-python-notebooks
     Atienza: https://towardsdatascience.com/gan-by-example-using-keras-on-tensorflow-backend-1a6d515a60d0
-  The GANs used in this project is called Deep Convolutional GAN (DCGAN) which utilizes deep convolutional layers implemented
-from Keras library.
+  
