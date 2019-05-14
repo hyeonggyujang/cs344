@@ -1,5 +1,5 @@
-### READ.ME
-Author: Hyeong Gyu Jang (hj35)
+### README
+#### Hyeong Gyu Jang (hj35)
 
 For the Final project, a GAN (Generative Adverserial Network) is built.
 To view the version that was used for the showcase, please view updates.ipynb
